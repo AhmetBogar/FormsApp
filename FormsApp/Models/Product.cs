@@ -7,15 +7,22 @@ namespace FormsApp.Models
         [Display(Name = "Ürün Id")]
         public int ProductId { get; set; }
 
+		[Required]
 		[Display(Name = "Ürün Adı")]
 		public string? Name { get; set; }
 
+		[Required]
+		[Range(0,100000)]
 		[Display(Name = "Fiyat")]
-		public decimal Price { get; set; }
+		public decimal? Price { get; set; }
+
 
 		[Display(Name = "Ürün Görseli")]
-		public string? Image { get; set; }
+		public string? Image { get; set; }=string.Empty;
         public bool IsActive { get; set; }
-        public int CategoryId { get; set; }
+
+        [Display(Name = "Kategori")]
+		[Required]
+        public int? CategoryId { get; set; }
     }
 }
